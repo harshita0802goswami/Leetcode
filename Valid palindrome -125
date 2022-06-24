@@ -1,0 +1,21 @@
+class Solution {
+    public boolean isPalindrome(String s) {
+        s=s.toLowerCase();
+        StringBuilder b = new StringBuilder();
+        for(int i=0;i<s.length();i++){
+            if(Character.isDigit(s.charAt(i))||Character.isLetter(s.charAt(i))){
+                b.append(s.charAt(i));
+            }
+        }
+        
+        int begin = 0;
+        int end = b.length()-1;
+        while(begin<end){
+            if(b.charAt(begin)!=b.charAt(end))
+                return false;
+            begin++;
+            end--;
+        }
+        return true;
+    }
+}
