@@ -1,0 +1,13 @@
+class Solution {
+    public int fib(int n) {
+        if(n==0 || n==1)
+            return n;
+        int firstNum =0,secondNum=1;
+        for(int i=1;i<=n-1;i++){
+            int thirdNum = firstNum;
+            firstNum = secondNum;
+            secondNum += thirdNum;
+        }
+        return secondNum;
+    }
+}
