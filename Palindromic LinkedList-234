@@ -1,0 +1,22 @@
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+         Stack<Integer> stk = new Stack<>();
+         ListNode curr = head;
+         boolean ans = true;
+    while(curr!=null){
+        stk.push(curr.val);
+        curr = curr.next;
+    }
+    while(head!=null){
+        int cur = stk.pop();
+        if(head.val==cur){
+           ans = true;
+        }else{
+            ans=  false;
+            break;
+        }
+        head = head.next;
+    }
+        return ans;
+    }
+}
