@@ -1,0 +1,13 @@
+class Solution {
+    public int maxCoins(int[] piles) {
+        int n = piles.length;
+        int result = 0;
+        
+        Arrays.sort(piles);
+        
+        for(int i = n/3;i<n;i+=2){
+            result += piles[i];
+        }
+        return result;
+    }
+}
