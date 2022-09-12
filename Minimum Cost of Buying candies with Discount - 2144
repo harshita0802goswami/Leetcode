@@ -1,0 +1,28 @@
+class Solution {
+   public static void reverse(int[] cost){
+        int n = cost.length;
+        
+        for(int i =0;i<n/2;i++){
+            int temp = cost[i];
+            cost[i] = cost[n-i-1];
+            cost[n-i-1] = temp;
+        }
+    }
+    
+    public int minimumCost(int[] cost) {
+        Arrays.sort(cost);
+        reverse(cost);
+        //        20 20 10 1
+        int ans = 1;
+        for(int i=1;i<cost.length;i+=3){
+            if(i == 0){
+                ans += cost[i];
+            }else{
+                 ans += cost[i]+cost[i-1];
+            }
+          
+        }
+        return ans;
+    }
+   
+}
